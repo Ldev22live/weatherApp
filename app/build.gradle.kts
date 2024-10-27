@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.picasso)
-    implementation(libs.converter.gson)
     implementation("com.github.kittinunf.fuel:fuel:2.3.1")
     implementation("com.github.kittinunf.fuel:fuel-gson:2.3.1")
     testImplementation(libs.junit)
