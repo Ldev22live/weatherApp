@@ -1,5 +1,6 @@
 package com.example.weatherktapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.weatherktapp.Activity.ForecastActivity
 import com.example.weatherktapp.ViewModel.WeatherViewModel
 import com.example.weatherktapp.databinding.ActivityMainBinding
 import java.util.Calendar
@@ -60,6 +62,13 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "An error occurred: ${error.message}", Toast.LENGTH_LONG).show()
                     }
                 )
+            }
+
+            forecastBtn.setOnClickListener {
+                val intent = Intent(this@MainActivity, ForecastActivity::class.java)
+                intent.putExtra("latitude", lat)
+                intent.putExtra("longitude", lon)
+                startActivity(intent)
             }
         }
     }
